@@ -10,7 +10,5 @@ class Resume(models.Model):
 
 class datafile(models.Model):
     csvx = models.FileField(
-        storage=s3_storage,
-        null=True, blank=True,
-        upload_to='data/')
+        _('csvx'), upload_to='data/', blank=True)
     csvname = models.CharField(max_length=100)
