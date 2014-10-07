@@ -13,7 +13,7 @@ def getcsv(request):
         form = datafileForm(request.POST, request.FILES)
         if form.is_valid():
             newdata = datafile()
-            newdata.csvx.save(form.cleaned_data['csvx'], content_type='application/csv')
+            newdata.csvx.save(form.cleaned_data['csvx'], )
             newdata.csvname = form.cleaned_data['csvname']
             newdata.save()
             response_data = {}
