@@ -16,7 +16,7 @@ def getcsv(request):
         if form.is_valid():
             fname = str(form.cleaned_data['csvx'])
             newdata = datafile()
-            newdata.csvx.save(form.cleaned_data['csvx'], ContentFile(fname))
+            newdata.csvx.save(request.FILES['csvx'], ContentFile(fname))
             newdata.csvname = form.cleaned_data['csvname']
             newdata.save()
             response_data = {}
