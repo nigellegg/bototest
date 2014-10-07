@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from upload.forms import datafileForm
 from upload.models import datafile
 from django.core.files.storage import default_storage as s3_storage
+from django.core.files.base import ContentFile
 import json
 
 
@@ -14,7 +15,7 @@ def getcsv(request):
         form = datafileForm(request.POST, request.FILES)
         if form.is_valid():
             newdata = datafile()
-            #newdata.csvx.save(form.cleaned_data['csvx'], )
+            newdata.csvx.save(form.cleaned_data['csvx'], ContentFile(form.cleaned_data['csvx']))
             newdata.csvname = form.cleaned_data['csvname']
             newdata.save()
             response_data = {}
