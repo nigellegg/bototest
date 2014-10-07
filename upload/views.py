@@ -13,7 +13,7 @@ def getcsv(request):
         form = datafileForm(request.POST, request.FILES)
         if form.is_valid():
             newdata = datafile()
-            newdata.csvx.save(storage=s3_storage, form.cleaned_data['csvx'])
+            newdata.csvx.save(form.cleaned_data['csvx'], storage=s3_storage)
             newdata.csvname = form.cleaned_data['csvname']
             newdata.save()
             response_data = {}
