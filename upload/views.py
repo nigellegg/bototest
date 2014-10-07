@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from upload.forms import datafileForm
 from upload.models import datafile
 from django.core.files.storage import default_storage as s3_storage
+import json
 
 
 def getcsv(request):
