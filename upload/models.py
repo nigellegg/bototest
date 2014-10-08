@@ -8,7 +8,7 @@ class Resume(models.Model):
     pdf = models.FileField(upload_to='pdfs')
 
 
-class datafile(models.Model):
+class upcsv(models.Model):
     csvx = models.FileField(
         ('csvx'), upload_to='data/', blank=True)
     csvname = models.CharField(max_length=100)
