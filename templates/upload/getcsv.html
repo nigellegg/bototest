@@ -2,7 +2,7 @@
 {% load bootstrap3 %}
 {% block title %}Get CSV{% endblock %}
 {% block content %}
-    <form action="/upload/getcsv/" method="post" >
+    <form action="/upload/getcsv/" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <br>
         <div class="row" >
