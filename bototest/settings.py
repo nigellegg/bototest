@@ -58,9 +58,9 @@ WSGI_APPLICATION = 'bototest.wsgi.application'
 #####
 DEFAULT_FILE_STORAGE = 'bototest.s3utils.MediaS3BotoStorage'
 STATICFILES_STORAGE = 'bototest.s3utils.StaticS3BotoStorage'
-AWS_ACCESS_KEY_ID = 'AKIAJP4FBHFJ6KLITF3Q'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'osmium'
+AWS_ACCESS_KEY_ID = 'xxxxx'
+AWS_SECRET_ACCESS_KEY = 'xxxxxx'
+AWS_STORAGE_BUCKET_NAME = 'mybucket'
 S3_URL = 'http://%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 STATIC_DIRECTORY = '/static/'
 MEDIA_DIRECTORY = '/media/'
@@ -111,8 +111,6 @@ STATICFILES_FINDERS = (
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
-MEDIA_URL = '/media/'
 
 TEMP_ROOT = os.path.join(PROJECT_ROOT, 'temp')
 TEMP_URL = '/temp/'
