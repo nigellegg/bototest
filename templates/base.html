@@ -36,6 +36,11 @@
         <!-- Site Header -->
         <div class="header">
 
+            <!-- Logo -->
+            <a href="{% url 'home' %}">
+                <img class="header-logo pull-left" src="{% static 'images-osmium/osmium-header-logo.png' %}">
+            </a>
+
             <!-- Right Aligned Nav options -->
             <ul class="nav nav-pills pull-right account-nav">
                 <!-- User Account dropdown -->
@@ -59,12 +64,7 @@
                     {% endif %}
                 </li>
             </ul>
-
-            <!-- Logo -->
-            <a href="{% url 'home' %}">
-                <img class="header-logo pull-left" src="{% static 'images-osmium/osmium-header-logo.png' %}">
-            </a>
-
+        <br>
         </div> <!-- End Header -->
 
         {% block content %}{% endblock %}
