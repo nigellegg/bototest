@@ -14,13 +14,12 @@ def getcsv(request):
     if request.method == 'POST':
         form = datafileForm(request.POST, request.FILES)
         if form.is_valid():
-            newdata = datafile()
-            newdata.csvx.save(request.FILES['csvx'], ContentFile(csvx))
+            newdata = datafile(csvx=request.FILES['csvx'])
             newdata.csvname = form.cleaned_data['csvname']
             newdata.save()
             response_data = {}
             response_data['success'] = 'true'
-            return HttpResponse(json.dumps(response_data), content_type='application/json')
+            return HttpResponseRedirect(reverse('upload.views.getcsv'))
     else:
         form = datafileForm()
     return render(request, 'upload/getcsv.html', {'form': form})
