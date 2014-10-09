@@ -9,7 +9,9 @@ urlpatterns = patterns('',
     # url(r'^$', 'bototest.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^home/', TemplateView.as_view(template_name="home.html"), name="home"),
-    url(r'^upload/getcsv/', 'upload.views.getcsv', name="getcsv"),
+    url(r'^upload/getcsv/$', 'upload.views.getcsv', name="getcsv"),
+    url(r'^display/files/$', 'display.views.files', name="files")
+    url(r'^display)dispdata/(?P<csvx_id>\d+)/$', 'display.views.dispdata', name="dispdata"),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
 )
