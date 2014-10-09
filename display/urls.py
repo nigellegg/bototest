@@ -6,5 +6,5 @@ admin.autodiscover()
 
 urlpatterns = patterns('display.views',
     url(r'^xfiles/$', 'xfiles', name="xfiles"),
-    url(r'^dispdata/(?P<csvx_id>\d+)/$', 'dispdata', name="dispdata"),
+    #url(r'^dispdata/(?P<csvx_id>\d+)/$', 'dispdata', name="dispdata"),
 )
