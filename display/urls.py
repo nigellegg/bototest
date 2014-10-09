@@ -5,6 +5,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('display.views',
-    url(r'^files/$', 'files', name="files"),
+    url(r'^xfiles/$', 'xfiles', name="xfiles"),
     url(r'^dispdata/(?P<csvx_id>\d+)/$', 'dispdata', name="dispdata"),
 )

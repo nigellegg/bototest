@@ -10,10 +10,10 @@ import pandas as pd
 import json
 
 
-def files(request):
-    files = csvx.objects.all()
-    return render(request, 'display/files.html',
-                  {'files': files})
+def xfiles(request):
+    xfiles = csvx.objects.all()
+    return render(request, 'display/xfiles.html',
+                  {'xfiles': xfiles})
 
 
 def dispdata(request, csvx_id):
