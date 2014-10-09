@@ -12,3 +12,6 @@ class upcsv(models.Model):
     csvx = models.FileField(
         storage=s3_storage, upload_to='data/')
     csvname = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.csvname
