@@ -18,7 +18,8 @@ def xfiles(request):
 def dispdata(request, csvx_id):
     data = upcsv.objects.get(pk=csvx_id)
     fname = data.csvx
-    df = s3_storage.pd.read_csv(str(fname))
+    dfile = s3_storage.open(str(fname))
+    df = pd.read_csv(dfile)
     dftable = pd.DataFrame(df.head()).to_html()
     return render(request, 'display/dispdata.html',
                   {'dftable': dftable})
