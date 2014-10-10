@@ -4,6 +4,7 @@ from django.template import RequestContext, Context, loader
 from django.contrib.auth.decorators import login_required
 from upload.forms import upcsvForm
 from upload.models import upcsv
+from bototst.settings import TEMP_ROOT
 from django.core.files.storage import default_storage as s3_storage
 import pandas as pd
 import json
@@ -19,7 +20,10 @@ def dispdata(request, csvx_id):
     data = upcsv.objects.get(pk=csvx_id)
     fname = data.csvx
     dfile = s3_storage.open(str(fname))
-    df = pd.read_csv(dfile)
+    out = open(TEMP_ROOT + str(fname))
+    out.write(dfile)
+    out.close()
+    df = pd.read_csv(TEMP_ROOT + str(fname))
     dftable = pd.DataFrame(df.head()).to_html()
     return render(request, 'display/dispdata.html',
                   {'dftable': dftable})
