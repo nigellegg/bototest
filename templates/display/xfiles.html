@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Files uploaded{% endblock %}
+
+{% block content %}
+<br>
+<p>Files uploaded:</p>
+{% if xfiles %}
+<ul>{% for file in xfiles %}
+<li><a href="/display/dispdata/{{ file.id }}">{{ file }}</a></li>
+{% endfor %}</ul>
+{% endif %}
+{% endblock %}

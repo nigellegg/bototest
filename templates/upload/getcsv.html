@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block title %}Get CSV{% endblock %}
+{% block content %}
+    <form action="/upload/getcsv/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        <div class="row" >
+            <div class='col-md-4'>{% bootstrap_field form.csvx %}</div>
+        </div>
+        <div class="row" >
+            <div class='col-md-4'>{% bootstrap_field form.csvname %}</div>
+        </div>
+        <p><input type='submit' value='Do it' /></p>
+    </form>
+    <br>
+    <p><a href='/display/xfiles/'>See data</a></p>
+{% endblock %}
+

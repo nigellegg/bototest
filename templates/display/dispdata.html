@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Returned data {% endblock %}
+
+{% block content %}
+<br>
+<p> df.head() rturns the first 5 rows of a dataframe. </p>
+<p> "safe" is required to display html. </p>
+<br><p>{{ dftable|safe }}</p>
+{% endblock %}
