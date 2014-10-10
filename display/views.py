@@ -4,7 +4,7 @@ from django.template import RequestContext, Context, loader
 from django.contrib.auth.decorators import login_required
 from upload.forms import upcsvForm
 from upload.models import upcsv
-from bototst.settings import TEMP_ROOT
+from bototest.settings import TEMP_ROOT
 from django.core.files.storage import default_storage as s3_storage
 import pandas as pd
 import json
