@@ -5,7 +5,7 @@
 <br>
 <p>Files uploaded:</p>
 {% if files %}
-<ul>{% for file in files %}
+<ul>{% for file in xfiles %}
 <li><a href="/display/dispdata/{ file.id }">{ file }</a></li>
 {% endfor %}</ul>
 {% endif %}
