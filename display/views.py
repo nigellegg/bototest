@@ -20,10 +20,10 @@ def dispdata(request, csvx_id):
     data = upcsv.objects.get(pk=csvx_id)
     fname = data.csvx
     dfile = s3_storage.open(str(fname))
-    out = open(TEMP_ROOT + str(fname))
-    out.write(dfile)
-    out.close()
-    df = pd.read_csv(TEMP_ROOT + str(fname))
+    #out = open(TEMP_ROOT + str(fname))
+    #out.write(dfile)
+    #out.close()
+    df = pd.read_csv(dfile)
     dftable = pd.DataFrame(df.head()).to_html()
     return render(request, 'display/dispdata.html',
                   {'dftable': dftable})
