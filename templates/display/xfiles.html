@@ -4,7 +4,7 @@
 {% block content %}
 <br>
 <p>Files uploaded:</p>
-{% if files %}
+{% if xfiles %}
 <ul>{% for file in xfiles %}
 <li><a href="/display/dispdata/{ file.id }">{{ file }}</a></li>
 {% endfor %}</ul>
