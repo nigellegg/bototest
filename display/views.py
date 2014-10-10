@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from django.core.urlresolvers import reverse
 from django.template import RequestContext, Context, loader
 from django.contrib.auth.decorators import login_required
 from upload.forms import upcsvForm
@@ -19,7 +18,7 @@ def xfiles(request):
 def dispdata(request, csvx_id):
     data = upcsv.objects.get(pk=csvx_id)
     fname = data.csvx
-    df = pd.read_csv(s3_storage + str(fname))
+    df = s3_storage.pd.read_csv(str(fname))
     dftable = pd.DataFrame(df.head()).to_html()
     return render(request, 'display/dispdata.html',
                   {'dftable': dftable})
