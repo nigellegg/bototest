@@ -11,7 +11,7 @@ import json
 
 
 def xfiles(request):
-    xfiles = csvx.objects.all()
+    xfiles = upcsv.objects.all()
     return render(request, 'display/xfiles.html',
                   {'xfiles': xfiles})
 
