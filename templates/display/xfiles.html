@@ -6,7 +6,7 @@
 <p>Files uploaded:</p>
 {% if files %}
 <ul>{% for file in files %}
-<li><a href="/display/dispdata/{ file_id }">{ file }</a></li>
+<li><a href="/display/dispdata/{ file.id }">{ file }</a></li>
 {% endfor %}</ul>
 {% endif %}
 {% endblock %}
