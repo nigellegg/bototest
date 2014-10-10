@@ -17,7 +17,7 @@ def xfiles(request):
 
 
 def dispdata(request, csvx_id):
-    data = csvx.object.get(pk=csvx_id)
+    data = upcsv.object.get(pk=csvx_id)
     fname = data.csvx
     df = pd.read_csv(s3_storage + fname)
     dftable = pd.DataFrame(df.head()).to_html()
